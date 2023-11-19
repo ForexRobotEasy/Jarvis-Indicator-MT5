@@ -1,0 +1,74 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                       Jarvis Indicator MT5 |
+//|                                             Developer's site: forexroboteasy.com |
+//|                                                        Forex Robot Easy Team |
+//|------------------------------------------------------------------+
+#property copyright 'Forex Robot Easy Team'
+#property link      'forexroboteasy.com'
+#property version   '1.00'
+#property strict
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+input ENUM_TIMEFRAMES Timeframe = PERIOD_H1;
+input int TrendPeriod = 14;
+input int SRPeriod = 14;
+input int FibPeriod = 14;
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    double trendSignal = TrendStrategy();
+    double srSignal = SupportResistanceStrategy();
+    double fibSignal = FibonacciChannelStrategy();
+
+    if (trendSignal > 0 && srSignal > 0 && fibSignal > 0)
+    {
+        // Place a buy trade
+        // ...
+    }
+    else if (trendSignal < 0 && srSignal < 0 && fibSignal < 0)
+    {
+        // Place a sell trade
+        // ...
+    }
+    else
+    {
+        // No trade signal
+        // ...
+    }
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+double TrendStrategy()
+{
+    // Code for identifying and generating trading signals based on the prevailing market trend
+    // ...
+    return 1.0; // Placeholder return value for demonstration purposes
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+double SupportResistanceStrategy()
+{
+    // Code for identifying key support and resistance levels and generating trading signals based on price action
+    // ...
+    return 1.0; // Placeholder return value for demonstration purposes
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+double FibonacciChannelStrategy()
+{
+    // Code for identifying and generating trading signals based on Fibonacci retracement levels and channels
+    // ...
+    return 1.0; // Placeholder return value for demonstration purposes
+}
